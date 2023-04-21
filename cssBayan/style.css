@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    }
+li{
+    list-style-type: none;
+}
+body{
+    background-color: aqua;
+}
+/* Ends */
+/* CONTAINER START */
+.wrapper{
+    margin: 0 auto;
+    background-color: beige;
+    max-width: 90%;
+    width: 53em;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 90%;
+    height: 100%;
+}
+/* CONTAINER END */
+    /* BAYAN START */
+    .title{
+        margin: .5em 0;
+    }
+    /* ITEM START */
+    .item{
+        display: flex;
+        flex-direction: column;
+        padding: .2em 0;
+        border-top: 0.06rem solid grey;
+        cursor: pointer;
+    }
+    .item-input{
+        appearance: none;
+    }
+    .item-input:checked + .item-content .description .item-title{
+        color: black;
+        transition: all 1.5s;
+    }
+    .item-input:checked  + .item-content .img-box{
+        max-height: 31.25em;
+        transition: all 1.5s;
+    }
+    .item-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        cursor: pointer;
+    }
+    /* DESCRIPTION START */
+    .description{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: .3em;
+    }
+    .item-title{
+        font-size: .5em;
+        color: blue;
+        transition: all 1.5s;
+    }
+    i{
+        font-size: .6em;
+        transition: transform .5s;
+    }
+    .item-input:checked +.item-content i{
+        transform: rotate(45deg);
+    }
+    /* DESCRIPTION END */  
+    /* IMG-BOX START */
+    .img-box{
+        display: flex;
+        margin: 0 auto;
+        max-height: 0; 
+        overflow: hidden; 
+        transition: all 1.5s;
+    }
+    .img{
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 5%;
+    }
+    .item:active  .item-content .description .item-title{
+        color: red;
+        transition: all .1s;
+    }
+    .item:active  .item-content .img-box img{
+        opacity: 0.7;
+        transition: all .1s;
+    }
+    .item:active i{
+        color: red;
+    }
+  
+    /* IMG-BOX END */
+    /* ITEM END */
+    /* BAYAN END */
+  
+
+
+    @media only screen and (min-width: 1025px) {
+    .title{
+        font-size: 3em;
+    }
+    /* ITEM START */
+    .item{
+        padding: .6em;
+    } 
+    .item-content{
+        width: 100%;
+    }
+    /* DESCRIPTION START */
+    .description{
+        margin-bottom: .6em;
+    }
+    .item-title{
+        color: blue;
+        font-size: 2em;
+    } 
+    /* DESCRIPTION END */
+    /* IMG-BOX START */
+    .img{
+        width: 45%;
+        margin: 0 auto;
+    }
+    /* IMG-BOX END */
+    /* ITEM END */
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {  
+    .title{
+        font-size: 2.5em;
+    }
+    .item-title{
+        font-size: 1.5em;
+        color: blue;
+    }
+    i{
+        font-size: 1em;
+    }
+    .img{
+        width: 45%;
+        margin: 0 auto;
+    }
+  
+
+}
+@media (max-width:480px) {
+    .item-title{
+        font-size: 1em;
+        color: blue;
+    } 
+    .img{
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 5%;
+    }    
+}
+@media (hover: hover) and (pointer: fine) {
+    i{
+        transition: font-size 1s;
+        font-size: 0em;
+    }
+    .img-box{  
+        transition: all 3s ease;
+    }
+    .items:hover .item-content .description .item-title{
+        color: black;
+        transition: all 1.5s;
+    }
+    .item-input:hover + .item-content .img-box{
+        max-height: 62.5em;
+        transition: all 3s ease;
+    }
+    .items:hover .item-content i{
+        transition: font-size 1.5s; 
+        font-size: 1em;
+    }
+    .item-input:hover +.item-content i{
+        transform: rotate(45deg);
+    }
+    .item:active  .item-content .description .item-title{
+        color: red;
+        transition: all .1s;
+    }
+    .item:active  .item-content .img-box img{
+        opacity: 0.7;
+        transition: all .1s;
+    }
+    .item:active i{
+        color: red;
+    }
+
+}
+
